@@ -80,7 +80,7 @@ if (!emailRegex.test(email)) {
       setService("");
       setMessage("");
     } else {
-      toast.error("Une erreur est survenue.");
+      toast.error(data.message);
     }
   } catch (error) {
     toast.error("Impossible d'envoyer la demande.");

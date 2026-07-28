@@ -95,14 +95,19 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error(error);
 
-    return NextResponse.json(
-      {
-        success: false,
-        message: "Erreur lors de l'envoi.",
-      },
-      {
-        status: 500,
-      }
-    );
+   const errorMessage =
+  error instanceof Error ? error.message : "Erreur inconnue";
+
+console.error(errorMessage);
+
+return NextResponse.json(
+  {
+    success: false,
+    message: errorMessage,
+  },
+  {
+    status: 500,
+  }
+);
   }
 }
