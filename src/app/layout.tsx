@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import StructuredData from "@/components/seo/StructuredData";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "SENTRANSCOM | Transport, BTP et Logistique au Sénégal",
+    default: "SENTRANSCOM SAURL | Transport • Logistique • BTP • Terrassement au Sénégal",
     template: "%s | SENTRANSCOM",
   },
 
@@ -24,18 +25,26 @@ export const metadata: Metadata = {
     "SENTRANSCOM est une entreprise sénégalaise spécialisée dans le transport, la logistique, le terrassement, l'exploitation de carrière, l'aménagement de pistes et la vente de pièces détachées.",
 
   keywords: [
-    "SENTRANSCOM",
-    "Transport Sénégal",
-    "Logistique Sénégal",
-    "Terrassement",
-    "BTP Sénégal",
-    "Carrière",
-    "Aménagement de pistes",
-    "Pièces détachées",
-    "Location d'engins",
-    "Diamniadio",
-    "Dakar",
-  ],
+  "SENTRANSCOM",
+  "SENTRANSCOM SAURL",
+  "Transport Sénégal",
+  "Entreprise de transport Sénégal",
+  "Transport de marchandises",
+  "Transport portuaire",
+  "Logistique Sénégal",
+  "BTP Sénégal",
+  "Terrassement",
+  "Entreprise BTP",
+  "Travaux publics Sénégal",
+  "Carrière",
+  "Exploitation de carrière",
+  "Aménagement de pistes",
+  "Location d'engins",
+  "Pièces détachées",
+  "Diamniadio",
+  "Dakar",
+  "Sénégal",
+],
 
   authors: [
     {
@@ -77,10 +86,11 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+  lang="fr"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <StructuredData />
   {children}
   <WhatsAppButton />
   <Toaster
